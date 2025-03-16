@@ -36,16 +36,25 @@ class SpendAPIViewSet(APIView):
             )
         elif spend_status == SPEND_STATUS.DAILY_BUDGET_SPENT:
             return Response(
-                {"message": "Daily budget spend."},
+                {
+                    "message": "Failed to spend on campaign.",
+                    "reason": "Daily budget limit reached."
+                },
                 status=status.HTTP_202_ACCEPTED
             )
         elif spend_status == SPEND_STATUS.MONTHLY_BUDGET_SPENT:
             return Response(
-                {"message": "Monthly budget spent."},
+                {
+                    "message": "Failed to spend on campaign.",
+                    "reason": "Monthly budget limit reached."
+                },
                 status=status.HTTP_202_ACCEPTED
             )
         else:
             return Response(
-                {"message": "Out of dayparting range."},
+                {
+                    "message": "Failed to spend on campaign.",
+                    "reason": "Out of dayparting range."
+                },
                 status=status.HTTP_202_ACCEPTED
             )
