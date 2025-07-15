@@ -1,4 +1,4 @@
-# My Add Agency App
+# My Ad Agency App
 
 This is a Django web application with Celery integrated for asynchronous task management. The project includes periodic tasks using Celery Beat and results stored in the Django database.
 
